@@ -1,0 +1,48 @@
+﻿@model Gavin0720.Models.TblProduct
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>新增頁面</h1>
+
+<h4>TblProduct</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CName" class="control-label"></label>
+                <input asp-for="CName" class="form-control" />
+                <span asp-validation-for="CName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPrice" class="control-label"></label>
+                <input asp-for="CPrice" class="form-control" />
+                <span asp-validation-for="CPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CInventory" class="control-label"></label>
+                <input asp-for="CInventory" class="form-control" />
+                <span asp-validation-for="CInventory" class="text-danger"></span>
+            </div>
+         @*   <div class="form-group">
+                <label asp-for="CCreateDt" class="control-label"></label>
+                <input asp-for="CCreateDt" class="form-control" />
+                <span asp-validation-for="CCreateDt" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Gavin0720.Models.TblProduct>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<p>
+    <a asp-action="Create">新增</a>
+    <a asp-action="Search">表單查詢列表</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CInventory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CCreateDt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CInventory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CCreateDt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

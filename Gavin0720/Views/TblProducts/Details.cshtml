@@ -1,0 +1,42 @@
+﻿@model Gavin0720.Models.TblProduct
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TblProduct</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CInventory)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CInventory)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CCreateDt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CCreateDt)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.CId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
