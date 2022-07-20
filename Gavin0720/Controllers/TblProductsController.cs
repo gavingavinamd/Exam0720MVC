@@ -177,12 +177,18 @@ namespace Gavin0720.Controllers
 
             var tblProducts = _context.TblProducts.ToList();
 
+            if(searchParams.CName == null)
+            {
+                ViewData["Message"] = "請輸入查詢名稱";
+            }
+
             if(searchParams.CName != null)
             {
                 var nameResult = from products in tblProducts
                                  where products.CName.Contains(searchParams.CName)
                                  select products;
                 searchViewModel.ProductResult = nameResult.ToList();
+                ViewData["Message"] = "搜尋結果為下";
             }
 
             return View(searchViewModel);

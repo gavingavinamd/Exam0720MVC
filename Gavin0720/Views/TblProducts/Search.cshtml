@@ -41,6 +41,7 @@
             </th>
         </tr>
     </thead>
+    @ViewData["Message"]
     <tbody>
         @foreach (var item in Model.ProductResult)
         {
@@ -63,7 +64,7 @@
 </table>
 
 
-@ViewData["Message"]
+
 <div>
     <a asp-action="Index">回到表單頁面</a>
 
